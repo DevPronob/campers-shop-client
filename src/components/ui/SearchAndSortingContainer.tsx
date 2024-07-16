@@ -1,8 +1,7 @@
 
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 
-function SearchAndSortingContainer({ search, setSort, sort, setSearch, priceRange, setPriceRange, category, setCategory }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function SearchAndSortingContainer({ search, setSort, sort, setSearch, priceRange, setPriceRange, category, setCategory }: any) {
 
     const handleReset = (e) => {
         e.preventDefault();

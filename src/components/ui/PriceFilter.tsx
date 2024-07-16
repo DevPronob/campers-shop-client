@@ -6,7 +6,7 @@ const PriceFilter = ({ minPrice, maxPrice, onPriceChange }) => {
     const [priceRange, setPriceRange] = useState([minPrice, maxPrice]);
 
     useEffect(() => {
-        onPriceChange(priceRange);
+        onPriceChange(priceRange[0], priceRange[1]);
     }, [priceRange, onPriceChange]);
 
     return (
@@ -16,7 +16,7 @@ const PriceFilter = ({ minPrice, maxPrice, onPriceChange }) => {
                 min={minPrice}
                 max={maxPrice}
                 value={priceRange}
-                onChange={setPriceRange}
+                onChange={value => setPriceRange(value)}
                 allowCross={false}
             />
             <div className="price-values">

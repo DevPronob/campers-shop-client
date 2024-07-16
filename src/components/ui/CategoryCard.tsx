@@ -1,8 +1,6 @@
 import { TCategory } from '@/types/CategoryTypes';
-import { TProduct } from '@/types/productTypes';
-import React from 'react';
 
-function CategoryCard({ item }: TCategory) {
+function CategoryCard({ item }: { item: TCategory }) {
     return (
         <div className="p-1 flex flex-wrap items-center justify-center">
             <div

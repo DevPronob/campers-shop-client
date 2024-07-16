@@ -1,3 +1,4 @@
+import Spinner from '@/components/ui/spinner';
 import { useDeleteCartMutation, useDeleteCartQuery, useGetCartQuery, useUpdateCartMutation } from '@/redux/api/features/cart/cartApi';
 import { quantityByPayload } from '@/redux/api/features/cart/cartSlice';
 import { TCartItem } from '@/types/productTypes';
@@ -5,6 +6,7 @@ import cartTotalPrice, { cartTotalAmount, getAmounts } from '@/utils/cartTotal';
 import { RootState } from '@reduxjs/toolkit/query';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'sonner';
 
 function Cart() {
     const [cart, setCart] = useState<TCartItem[] | null>(null);
@@ -62,9 +64,6 @@ function Cart() {
         }
 
     }
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>Error loading cart</div>;
-
     const amounts = getAmounts(data);
     const totalAmount = cartTotalAmount(amounts);
 

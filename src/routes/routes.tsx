@@ -9,6 +9,7 @@ import Checkout from "@/pages/Checkout/Checkout";
 import SuccessPage from "@/components/SuccessPage";
 import Payment from "@/pages/Payment/Payment";
 import ProductManagement from "@/pages/ProductManagement/ProductManagement";
+import About from "@/pages/About/About";
 
 export const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
             {
                 path: "/success",
                 element: <SuccessPage />
+            },
+            {
+                path: "/about-us",
+                element: <About />
             },
         ]
     },

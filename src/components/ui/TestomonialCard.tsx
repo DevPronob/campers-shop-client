@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TestomonialCard({ item }) {
+function TestomonialCard({ item }: { item: any }) {
     return (
         <div>
             <div className="flex flex-col rounded-xl py-4  text-center ">

@@ -2,10 +2,10 @@ import { TProduct } from '@/types/productTypes'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function productCard({ product }: TProduct) {
+function productCard({ product }: { product: TProduct }) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const navigate = useNavigate()
-    const nagivateToDetail = (name) => {
+    const nagivateToDetail = (name: string) => {
         console.log(name)
         navigate(`/product/${name}`)
     }
@@ -59,12 +59,10 @@ function productCard({ product }: TProduct) {
                             {/* #21b3f1 */}
                             {product.stock > 1 ?
                                 <button onClick={() => nagivateToDetail(product._id)} type="button"
-                                    className="py-2 px-4 bg-[#ffffff] border border-[#21b3f1] text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-[#21b3f1] focus:ring-offset-2 focus:ring-offset-indigo-200 hover:bg-[#21b3f1] hover:text-white rounded-lg">Buy
-                                    now</button>
+                                    className="py-2 px-4 bg-[#ffffff] border border-[#21b3f1] text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-[#21b3f1] focus:ring-offset-2 focus:ring-offset-indigo-200 hover:bg-[#21b3f1] hover:text-white rounded-lg">Details</button>
                                 :
                                 <button disabled={true} type="button"
-                                    className="py-2 px-4 bg-[#ffffff] border border-[#21b3f1] text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-[#21b3f1] focus:ring-offset-2 focus:ring-offset-indigo-200 hover:bg-[#21b3f1] hover:text-white rounded-lg">Buy
-                                    now</button>
+                                    className="py-2 px-4 bg-[#ffffff] border border-[#21b3f1] text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-[#21b3f1] focus:ring-offset-2 focus:ring-offset-indigo-200 hover:bg-[#21b3f1] hover:text-white rounded-lg">Details</button>
                             }
                         </div>
 
